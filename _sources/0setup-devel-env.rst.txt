@@ -125,14 +125,14 @@ Rust 开发环境配置
 Qemu 模拟器安装
 ----------------------------------------
 
-我们需要使用 Qemu 7.0.0 版本进行实验，为此，从源码手动编译安装 Qemu 模拟器：
+我们推荐使用 Qemu 7.0.0 版本进行实验，不过更高级的版本也可运行。为此，从源码手动编译安装 Qemu 模拟器：
 
 .. attention::
 
    如果使用 Qemu8 或 Qemu9，你需要：
 
    * 替换 ``bootloader/rustsbi-qemu.bin`` 为最新版 `在这里下载 <https://github.com/rustsbi/rustsbi-qemu/releases>`_ 后更名为 ``bootloader/rustsbi-qemu.bin`` 并替换同名文件即可
-   * 将 ``os/src/sbi.rs`` 中的常量 ``SBI_SHUTDOWN`` 的值替换为 ``const SBI_SHUTDOWN: usize = 0x53525354;``，``SBI_SET_TIMER`` 的值替换为 ``const SBI_SET_TIMER: usize = 0x54494D45;``
+   * 从 **第三章** 开始，将 ``os/src/sbi.rs`` 文件中的常量 ``SBI_SHUTDOWN`` 的值替换为 ``const SBI_SHUTDOWN: usize = 0x53525354;``，``SBI_SET_TIMER`` 的值替换为 ``const SBI_SET_TIMER: usize = 0x54494D45;``
    
 .. attention::
 
