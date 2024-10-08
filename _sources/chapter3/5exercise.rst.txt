@@ -69,7 +69,7 @@ ch3 中，我们的系统已经能够支持多个任务分时轮流运行，我�
    你需要在编译时指定 ``BASE=0`` 控制框架仅编译实验测例（在 os 目录执行 ``make run BASE=0``），
    或指定 ``BASE=2`` 控制框架同时编译基础测例和实验测例。
 
-- 如果本地在线编译访问 github 遇到问题，可以对 os/Cargo.toml 中的依赖进行如下替换：
+- 如果本地在线编译访问 github 遇到问题，可以将 os/Cargo.toml 中 ``riscv`` 和 ``virtio-drivers`` 两个仓库的依赖替换为：
 
    .. code-block:: shell
       
@@ -81,8 +81,8 @@ ch3 中，我们的系统已经能够支持多个任务分时轮流运行，我�
 
    .. code-block:: shell
 
-      git clone git@git.tsinghua.edu.cn:os-lab/2024A/public/rcore-tutorial-checker-2024A.git ci-user
-      git clone git@git.tsinghua.edu.cn:os-lab/2024A/public/rcore-tutorial-test-2024A.git ci-user/user
+      git clone https://github.com/LearningOS/rCore-Tutorial-Checker-2024A ci-user
+      git clone https://github.com/LearningOS/rCore-Tutorial-Test-2024A ci-user/user
       cd ci-user && make test CHAPTER=$ID OFFLINE=1
 
 
@@ -98,7 +98,7 @@ ch3 中，我们的系统已经能够支持多个任务分时轮流运行，我�
    请同学们可以自行测试这些内容（运行 `三个 bad 测例 (ch2b_bad_*.rs) <https://github.com/LearningOS/rCore-Tutorial-Test-2024A/tree/master/src/bin>`_ ），
    描述程序出错行为，同时注意注明你使用的 sbi 及其版本。
 
-2. 深入理解 `trap.S <https://github.com/LearningOS/rCore-Tutorial-Code-2024A/blob/ch3/os/src/trap/trap.S>`_
+2. 深入理解 `trap.S <https://github.com/LearningOS/rCore-Camp-Code-2024A/blob/ch3/os/src/trap/trap.S>`_
    中两个函数 ``__alltraps`` 和 ``__restore`` 的作用，并回答如下问题:
 
    1. L40：刚进入 ``__restore`` 时，``a0`` 代表了什么值。请指出 ``__restore`` 的两种使用情景。

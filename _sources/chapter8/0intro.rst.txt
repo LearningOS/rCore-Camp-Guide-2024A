@@ -88,8 +88,8 @@
 
 .. code-block:: console
 
-   $ git clone https://github.com/LearningOS/rCore-Tutorial-Code-2024A.git
-   $ cd rCore-Tutorial-Code-2024A
+   $ git clone https://github.com/LearningOS/rCore-Camp-Code-2024A.git
+   $ cd rCore-Camp-Code-2024A
    $ git checkout ch8
    $ git clone https://github.com/LearningOS/rCore-Tutorial-Test-2024A.git user
 
