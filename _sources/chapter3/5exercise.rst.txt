@@ -77,13 +77,13 @@ ch3 中，我们的系统已经能够支持多个任务分时轮流运行，我�
       virtio-drivers = { git = "https://gitee.com/rcore-os/virtio-drivers", rev = "4ee80e5" }
 
 
-- 本地离线运行 CI 脚本的方法（注意 CI 脚本会修改代码仓库的文件，请在运行前暂存改动）：
+- 本地运行 CI 脚本的方法（注意 CI 脚本会修改代码仓库的文件，请在运行前暂存改动）：
 
    .. code-block:: shell
 
       git clone https://github.com/LearningOS/rCore-Tutorial-Checker-2024A ci-user
       git clone https://github.com/LearningOS/rCore-Tutorial-Test-2024A ci-user/user
-      cd ci-user && make test CHAPTER=$ID OFFLINE=1
+      cd ci-user && make test CHAPTER=$ID
 
 
 .. note::
