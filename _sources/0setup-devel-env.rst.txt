@@ -270,8 +270,13 @@ GDB 调试支持*
    使用 GDB debug 并不是必须的，你可以暂时跳过本小节。
 
 
+目前支持两种方式调试 rCore 内核：
 
-在 ``os`` 目录下 ``make debug`` 可以调试我们的内核，这需要安装终端复用工具 ``tmux`` ，还需要基于 riscv64 平台的 gdb 调试器 ``riscv64-unknown-elf-gdb`` 。该调试器包含在 riscv64 gcc 工具链中，工具链的预编译版本可以在如下链接处下载：
+1. 首先，在 ``os/Makefile`` 中将 ``MODE := release`` 改成 ``MODE := debug``。然后在 ``os`` 目录下打开两个终端，第一个终端运行 ``make gdbserver``，等到 qemu 成功启动后，在第二个终端运行 ``make gdbclient``，即可开始调试。
+
+2. 同样地，还是在 ``os/Makefile`` 中将 ``MODE := release`` 改成 ``MODE := debug``。然后在 ``os`` 目录下 ``make debug`` 可以开始调试（需要安装终端复用工具 ``tmux``）。
+
+注意，上述的调试方式还需要基于 riscv64 平台的 gdb 调试器 ``riscv64-unknown-elf-gdb`` 。该调试器包含在 riscv64 gcc 工具链中，工具链的预编译版本可以在如下链接处下载：
 
 - `Ubuntu 平台 <https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14.tar.gz>`_
 - `macOS 平台 <https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-apple-darwin.tar.gz>`_
