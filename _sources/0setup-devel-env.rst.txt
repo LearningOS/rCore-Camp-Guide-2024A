@@ -175,10 +175,11 @@ Qemu 模拟器安装
 
 .. code-block:: bash
 
-   # 注意 $HOME 是 Linux 自动设置的表示你家目录的环境变量，你也可以根据实际位置灵活调整
-   export PATH="$HOME/os-env/qemu-7.0.0/build/:$PATH"
-   export PATH="$HOME/os-env/qemu-7.0.0/build/riscv64-softmmu:$PATH"
-   export PATH="$HOME/os-env/qemu-7.0.0/build/riscv64-linux-user:$PATH"
+   # 注意 $HOME 是 Linux 自动设置的表示当前用户目录(即 ~ 目录或 /home/<User Name> 的环境变量，你也可以根据实际位置灵活调整
+   # <Your qemu path> 是 qemu-7.0.0 的父目录，也就是你在哪个文件夹下载安装的 qemu
+   export PATH="$HOME/<Your qemu path>/qemu-7.0.0/build/:$PATH"
+   export PATH="$HOME/<Your qemu path>/qemu-7.0.0/build/riscv64-softmmu:$PATH"
+   export PATH="$HOME/<Your qemu path>/qemu-7.0.0/build/riscv64-linux-user:$PATH"
 
 随后即可在当前终端 ``source ~/.bashrc`` 更新系统路径，或者直接重启一个新的终端。
 
