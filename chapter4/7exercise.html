@@ -315,7 +315,7 @@
 </div>
 <ul class="simple">
 <li><p>syscall ID：215</p></li>
-<li><p>取消到 [start, start + len) 虚存的映射</p></li>
+<li><p>取消到 [start, start + len) 虚存的映射。特别地，在 rCore 课程实验中，正确执行的 sys_munmap 仅会对应 <strong>唯一且完整</strong> 的 mmap 区间，不考虑交叉、截断区间的情况。</p></li>
 <li><p>参数和返回值请参考 mmap</p></li>
 <li><dl class="simple">
 <dt>说明：</dt><dd><ul>

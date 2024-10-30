@@ -45,7 +45,7 @@ munmap 定义如下：
     fn sys_munmap(start: usize, len: usize) -> isize
 
 - syscall ID：215
-- 取消到 [start, start + len) 虚存的映射
+- 取消到 [start, start + len) 虚存的映射。特别地，在 rCore 课程实验中，正确执行的 sys_munmap 仅会对应 **唯一且完整** 的 mmap 区间，不考虑交叉、截断区间的情况。
 - 参数和返回值请参考 mmap
 - 说明：
     - 为了简单，参数错误时不考虑内存的恢复和回收。
