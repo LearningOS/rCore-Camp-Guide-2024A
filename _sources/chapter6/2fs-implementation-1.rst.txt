@@ -635,7 +635,7 @@ easy-fs 超级块
 
     pub const DIRENT_SZ: usize = 32;
 
-目录项 ``Dirent`` 保存的文件名长度不能超过 27。目录项自身长 32 字节，每个数据块可以存储 16 个目录项。可以通过 ``empty`` 和 ``new`` 方法生成目录项，通过 ``name`` 和 ``inode_number`` 方法取出目录项中的内容：
+目录项 ``DirEntry`` 保存的文件名长度不能超过 27。目录项自身长 32 字节，每个数据块可以存储 16 个目录项。可以通过 ``empty`` 和 ``new`` 方法生成目录项，通过 ``name`` 和 ``inode_number`` 方法取出目录项中的内容：
 
 .. code-block:: rust
 

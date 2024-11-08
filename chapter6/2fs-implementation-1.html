@@ -823,7 +823,7 @@
 <span class="k">pub</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DIRENT_SZ</span>: <span class="kt">usize</span> <span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<p>目录项 <code class="docutils literal notranslate"><span class="pre">Dirent</span></code> 保存的文件名长度不能超过 27。目录项自身长 32 字节，每个数据块可以存储 16 个目录项。可以通过 <code class="docutils literal notranslate"><span class="pre">empty</span></code> 和 <code class="docutils literal notranslate"><span class="pre">new</span></code> 方法生成目录项，通过 <code class="docutils literal notranslate"><span class="pre">name</span></code> 和 <code class="docutils literal notranslate"><span class="pre">inode_number</span></code> 方法取出目录项中的内容：</p>
+<p>目录项 <code class="docutils literal notranslate"><span class="pre">DirEntry</span></code> 保存的文件名长度不能超过 27。目录项自身长 32 字节，每个数据块可以存储 16 个目录项。可以通过 <code class="docutils literal notranslate"><span class="pre">empty</span></code> 和 <code class="docutils literal notranslate"><span class="pre">new</span></code> 方法生成目录项，通过 <code class="docutils literal notranslate"><span class="pre">name</span></code> 和 <code class="docutils literal notranslate"><span class="pre">inode_number</span></code> 方法取出目录项中的内容：</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// easy-fs/src/layout.rs</span>
 
 <span class="k">impl</span><span class="w"> </span><span class="n">DirEntry</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
